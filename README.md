@@ -14,9 +14,9 @@ You need to create a two firewall rules and two aliases to use it.
 
 In **Firewall > Aliases** create:
 
-- `OnlyBotsTryThesePorts` as a **port alias** with ports you **do not use** but that bots love to probe, for example:
-  `22,23,2222,2323,3389,5900,7547,8291,8080,8443`
-- `nd_auto_ban` as an empty **Host(s) or Network(s)** alias
+- `OnlyBotsTryThesePorts` as a *port alias* with ports you **do not expose to the Internet** but that bots love to probe, for example:
+  `22,23,445,2222,2323,3389,5900,7547,8291,8080,8443`
+- `nd_auto_ban` as an empty *Host(s) or Network(s)* alias
 
 In **Firewall > Rules > WAN**:
 
