@@ -136,6 +136,22 @@ pgrep -af pf-filter-watch
 tail -20 /var/log/pf-filter-watch.log
 ```
 
+## Everyday use
+
+You can review and remove baned IPs from `Diagnostics` > `Tables` > Select `nd_auto_ban` from the list:
+<img width="658" height="484" alt="image" src="https://github.com/user-attachments/assets/297be5c0-aadf-4e46-8310-df858bd0f8fd" />
+
+You can permit list some IP by adding it to `/usr/local/etc/pf-filter-watch.json`.
+
+You can monitor the logs:
+```sh
+# tail -f /var/log/pf-filter-watch.log
+May 05 13:34:48 Started. Watching /var/log/filter.log, matching rule IDs: 1776328716, 1776328730, always-allowed IPs: 1.2.3.4, alias: nd_auto_ban
+May 05 13:34:55 IP 213.5.70.12 tried TCP port 23 and matched watched rule 1776328730. IP 213.5.70.12 was already present in alias nd_auto_ban.
+May 05 13:35:11 IP 45.148.10.230 tried TCP port 22 and matched watched rule 1776328716. Added 45.148.10.230 to alias nd_auto_ban.
+May 05 13:35:40 IP 38.9.184.151 tried TCP port 23 and matched watched rule 1776328716. Added 38.9.184.151 to alias nd_auto_ban.
+```
+
 ## Files used
 
 * Script: `/usr/local/sbin/pf-filter-watch.py`
